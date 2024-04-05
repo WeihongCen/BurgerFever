@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Burger Fever</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="utils.js"></script>
+    <script defer src="set.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Burger Fever</h1>
+    </header>
+
+    <main>
+      <section id="menu-view">
+        <div id="settings">
+          <div>
+            <h2>Difficulty Level</h2>
+            <p>
+              <label><input type="radio" name="diff" value="easy" checked /> Easy</label>
+              <label><input type="radio" name="diff" value="standard" /> Standard</label>
+            </p>
+          </div>
+          <div id="settings-divider"></div>
+          <div>
+            <h2>Select Timer</h2>
+            <select>
+              <option value="60">1 Minute</option>
+              <option value="180" selected>3 Minutes</option>
+              <option value="300">5 Minutes</option>
+            </select>
+          </div>
+        </div>
+        <button id="start-btn">Start</button>
+      </section>
+
+      <section id="game-view" class="hidden">
+      </section>
+    </main>
+  </body>
+</html>
