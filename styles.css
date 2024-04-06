@@ -95,3 +95,125 @@ button {
 .difficulty .selected {
     border: 3px solid #c03732;
 }
+
+#order {
+    background-color: #FFFCF7;
+    width: 240px;
+    height: 520px;
+    border-radius: 20px;
+    filter: drop-shadow( 2px 9px 15px #40404040);
+    padding: 10px 20px;
+}
+
+#game-view {
+    display: flex;
+}
+
+#top-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+#game-view-child {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 520px;
+}
+
+#serve {
+    margin-left: auto;
+    margin-top: auto;
+}
+
+#bottom-section {
+    margin-top: 30px;
+    width: 100%;
+    height: 340px;
+    background-color: #EBDFC2;
+    border-radius: 20px;
+}
+
+.plate {
+    position: relative;
+    width: 70%;
+    height: 80%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('imgs/plate.png');
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+}
+
+.tomato {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 166px;
+    height: 16.6px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('imgs/tomato.png');
+}
+
+#order {
+    background-color: #FFFCF7;
+    width: 240px;
+    height: 520px;
+    border-radius: 20px;
+    filter: drop-shadow( 2px 9px 15px #40404040);
+    padding: 10px 20px;
+}
+
+#game-view {
+    display: flex;
+}
+
+#top-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+#game-view-child {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 520px;
+}
+
+#serve {
+    margin-left: auto;
+    margin-top: auto;
+}
+
+#bottom-section {
+    margin-top: 30px;
+    width: 100%;
+    height: 340px;
+    background-color: #EBDFC2;
+    border-radius: 20px;
+}
+
+.plate {
+    position: relative;
+    width: 70%;
+    height: 80%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('imgs/plate.png');
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+}
+
+.tomato {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 166px;
+    height: 16.6px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('imgs/tomato.png');
+}
