@@ -1,51 +1,97 @@
+/* Color palette */
+:root {
+    --orange-yellow: #FFF7E4;
+    --watermelon: #FF4B44;
+}
+
 .hidden {
     display: none;
 }
 
-body, button, select, input {
+body {
     font-size: 12pt;
     font-family: Helvetica, Verdana, sans-serif;
-}
-
-body {
-    background-color: #FFF7E4;
+    background-color: var(--orange-yellow);
+    margin: 0;
 }
 
 header {
     padding-top: 50px;
-}
-
-header {
     margin: auto;
     width: fit-content;
 }
 
-h1 {
-    font-size: 48pt;
-    color: #FF4646;
-    background-image: linear-gradient(90deg, #FF9921, #FF4646);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-    width: fit-content;
-}
-
 #menu-view {
-    margin: 100px;
-    padding: 50px;
-    background-color: white;
-    border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    height: 100vh;
+    background-image: url('imgs/burgers.png');
+    background-size: 50vw;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom left;
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20%;
+    padding: 50px;
+    gap: 50px;
+    height: fit-content;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
 }
 
 #settings {
     display: flex;
-    justify-content: center;
+    width: 100%;
+    margin: 0;
+    flex-wrap: wrap;
+    gap: 40px;
 }
 
-#settings-divider {
-    width: 2px;
-    background-color: #CBCBCB;
+.difficulty {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 20px;
+    width: 30%;
+    min-width: 200px;
+}
+
+select {
+    max-width: 100%;
+    width: 400px;
+    height: 50px;
+    padding-left: 10px;
+    border: 2px solid #DDDDDD;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button {
+    max-width: 100%;
+    width: 400px;
+    height: 50px;
+    background-image: linear-gradient(90deg, #FF8833, #F4CA35);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.difficulty button {
+    background-image: none;
+    background-color: transparent;
+    border: 3px solid var(--watermelon);
+}
+
+.difficulty button:hover, .difficulty .selected {
+    background-color: var(--watermelon);
+}
+
+.difficulty .selected {
+    border: 3px solid #c03732;
 }

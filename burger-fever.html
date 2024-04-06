@@ -4,36 +4,34 @@
     <meta charset="UTF-8" />
     <title>Burger Fever</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="text-styles.css" />
     <script src="utils.js"></script>
-    <script defer src="set.js"></script>
+    <script defer src="menu-helper.js"></script>
+    <script defer src="burger-fever.js"></script>
   </head>
 
   <body>
-    <header>
-      <h1>Burger Fever</h1>
-    </header>
-
     <main>
       <section id="menu-view">
-        <div id="settings">
-          <div>
-            <h2>Difficulty Level</h2>
-            <p>
-              <label><input type="radio" name="diff" value="easy" checked /> Easy</label>
-              <label><input type="radio" name="diff" value="standard" /> Standard</label>
-            </p>
+        <h1>Burger Fever</h1>
+        <div id="menu">
+          <div id="settings">
+            <div class="difficulty">
+              <h2>Difficulty Level</h2>
+              <button value="easy" class="selected">Easy</button>
+              <button value="hard">Hard</button>
+            </div>
+            <div class="difficulty">
+              <h2>Select Timer</h2>
+              <select>
+                <option value="60">1 Minute</option>
+                <option value="180" selected>3 Minutes</option>
+                <option value="300">5 Minutes</option>
+              </select>
+            </div>
           </div>
-          <div id="settings-divider"></div>
-          <div>
-            <h2>Select Timer</h2>
-            <select>
-              <option value="60">1 Minute</option>
-              <option value="180" selected>3 Minutes</option>
-              <option value="300">5 Minutes</option>
-            </select>
-          </div>
+        <button id="start-btn">START</button>
         </div>
-        <button id="start-btn">Start</button>
       </section>
 
       <section id="game-view" class="hidden">
