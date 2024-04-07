@@ -6,12 +6,18 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   width: fit-content;
-  margin: 4% auto;
+  margin: 0 auto;
 }
 
 h2 {
   font-size: 16pt;
   margin: 0;
+}
+
+/* Color palette */
+:root {
+  --orange-yellow: #FFF7E4;
+  --watermelon: #FF4B44;
 }
 
 button {
@@ -24,9 +30,9 @@ select {
 }
 
 .difficulty button {
-  color: #FF4646;
+  color: var(--watermelon);
 }
 
 .difficulty button:hover, .difficulty .selected {
-  color: white;
+  color: var(--orange-yellow);
 }

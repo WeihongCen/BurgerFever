@@ -9,6 +9,22 @@
     "use strict";
 
     function init() {
+        const START_BUTTON = qs("#start-btn");
+        START_BUTTON.addEventListener("click", start);
+    }
+    
+    function start() {
+        toggleView();
+    }
+
+    /**
+     * Toggles visibility of menu and game.
+     */
+    function toggleView() {
+        const MENU_VIEW = qs("#menu-view");
+        const GAME_VIEW = qs("#game-view");
+        MENU_VIEW.classList.toggle("hidden");
+        GAME_VIEW.classList.toggle("hidden");
     }
     
     init();
