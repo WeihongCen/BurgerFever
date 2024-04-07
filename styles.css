@@ -21,19 +21,20 @@ header {
 }
 
 #menu-view {
-    height: 100vh;
+    height: 90vh;
     background-image: url('imgs/burgers.png');
     background-size: 50vw;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: bottom left;
+    padding: 5vh 0;
 }
 
 #menu {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 20%;
+    margin: 5% 20%;
     padding: 50px;
     gap: 50px;
     height: fit-content;
