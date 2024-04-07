@@ -105,15 +105,13 @@ button {
 #top-nav {
     display: flex;
     justify-content: space-between;
+    padding: 0px 20px;
 }
 
-#game-view-child {
-    width: 100%;
+#game-view {
     display: flex;
-    flex-direction: column;
-    height: 520px;
+    padding: 20px;
 }
-
 #serve {
     margin-left: auto;
     margin-top: auto;
@@ -162,7 +160,7 @@ button {
 header {
     display: flex;
     justify-content: space-between;
-    padding: 0px 40px;
+    padding: 0px 20px;
     width: auto;
 }
 
