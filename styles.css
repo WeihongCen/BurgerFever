@@ -2,6 +2,10 @@
     display: none;
 }
 
+main {
+    padding: 10px 20px;
+}
+
 body, button, select, input {
     font-size: 12pt;
     font-family: Helvetica, Verdana, sans-serif;
@@ -68,9 +72,11 @@ button {
     display: flex;
 }
 
-#top-nav {
+header {
     display: flex;
     justify-content: space-between;
+    padding: 0px 40px;
+    width: auto;
 }
 
 #game-view-child {
@@ -85,13 +91,6 @@ button {
     margin-top: auto;
 }
 
-#bottom-section {
-    margin-top: 30px;
-    width: 100%;
-    height: 340px;
-    background-color: #EBDFC2;
-    border-radius: 20px;
-}
 
 .plate {
     position: relative;
@@ -114,4 +113,27 @@ button {
     background-size: contain;
     background-repeat: no-repeat;
     background-image: url('imgs/tomato.png');
+}
+
+#bottom-section {
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #EBDFC2;
+    border-radius: 20px;
+    gap: 16px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.ingredient-card {
+    min-width: 200px;
+    width: 23%;
+    height: 160px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 24px;
 }
