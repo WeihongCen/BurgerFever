@@ -5,6 +5,7 @@
     <title>Burger Fever</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="text-styles.css" />
+    <link rel="stylesheet" href="game-view.css" />
     <script src="utils.js"></script>
     <script defer src="menu-helper.js"></script>
     <script defer src="burger-fever.js"></script>
@@ -12,7 +13,7 @@
 
   <body>
     <main>
-      <section id="menu-view">
+      <section id="menu-view" class="hidden">
         <h1>Burger Fever</h1>
         <div id="menu">
           <div id="settings">
@@ -33,7 +34,39 @@
         <button id="start-btn">Start</button>
         </div>
       </section>
-      <section id="game-view" class="hidden">
+
+
+      <section id="game-view">
+        <div id="game">
+          <div id="HUD">
+            <button><a href="burger-fever.html">Menu</a></button>
+            <p>Score: 999</p>
+            <p>Timer: 3:00</p>
+          </div>
+          <div id="station">
+            <div id="order">
+              <h2>Order</h2>
+              <ul>
+                <li>Top bun</li>
+                <li>Pickles</li>
+                <li>Cheese</li>
+                <li>Patty</li>
+                <li>Onion</li>
+                <li>Tomato</li>
+                <li>Lettuce</li>
+                <li>Bottom Bun</li>
+              </ul>
+            </div>
+            <div id="assembly">
+                <div class="plate">
+                    <div class="tomato"></div>
+                </div>
+                <button id="serve">Serve ►</button>
+            </div>
+          </div>
+          <div id="ingredient-list">
+          </div>
+        </div>
       </section>
     </main>
   </body>

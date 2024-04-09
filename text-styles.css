@@ -36,3 +36,7 @@ select {
 .difficulty button:hover, .difficulty .selected {
   color: var(--orange-yellow);
 }
+
+.ingredient-card strong {
+  margin: auto;
+}
