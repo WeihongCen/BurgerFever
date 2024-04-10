@@ -8,16 +8,19 @@
 (function() {
     "use strict";
 
-    const INGREDIENTS = ["bottom-bun", "cheese", "lettuce", "onion", "patty", 
-        "pickles", "tomato", "top-bun"];
+    const INGREDIENTS = ["top-bun", "pickles", "cheese", "patty", "onion", "tomato", "lettuce", "bottom-bun"];
+    const SLICES = ["pickles", "cheese", "patty", "onion", "tomato", "lettuce"];
 
     function init() {
         const START_BUTTON = qs("#start-btn");
+        const BACK_BUTTON = qs("#back-btn");
         START_BUTTON.addEventListener("click", start);
+        BACK_BUTTON.addEventListener("click", toggleView);
         populateCards();
     }
     
     function start() {
+        generateOrder();
         populateCards();
         toggleView();
     }
@@ -26,25 +29,45 @@
      * Toggles visibility of menu and game.
      */
     function toggleView() {
-        const MENU_VIEW = qs("#menu-view");
-        const GAME_VIEW = qs("#game-view");
+        const MENU_VIEW = id("menu-view");
+        const GAME_VIEW = id("game-view");
         MENU_VIEW.classList.toggle("hidden");
         GAME_VIEW.classList.toggle("hidden");
     }
+
+    function generateOrder() {
+        let order = id("order");
+        order.innerHTML = '';
+        let ingredientCount = 4 + Math.floor(5 * Math.random());
+
+        for (let i = 0; i < ingredientCount; i++) {
+            let ingredient = document.createElement("p");
+            if (i == 0) {
+                ingredient.innerText = "Top bun";
+            } else if (i == ingredientCount - 1) {
+                ingredient.innerText = "Bottom bun";
+            } else {
+                let sliceName = SLICES[Math.floor(SLICES.length * Math.random())];
+                ingredient.innerText = sliceName;
+            }
+            order.appendChild(ingredient);
+        }
+    }
     
     function populateCards() {
-        let ingredientsList = qs("#ingredient-list");
+        let ingredientsList = id("ingredient-list");
+        ingredientsList.innerHTML = '';
         for (let i = 0; i < INGREDIENTS.length; i++) {
-            var ingredientCard = document.createElement("div");
+            let ingredientCard = document.createElement("div");
             ingredientCard.classList.add("ingredient-card");
 
-            var ingredientName = document.createElement("strong");
-            ingredientName.textContent = INGREDIENTS[i];
+            let ingredientName = document.createElement("strong");
+            ingredientName.textContent = INGREDIENTS[i].replace('-', ' ');
 
-            var imgContainer = document.createElement("div");
+            let imgContainer = document.createElement("div");
             imgContainer.classList.add("img-container");
 
-            var ingredientImg = document.createElement("img");
+            let ingredientImg = document.createElement("img");
             ingredientImg.classList.add("ingredients");
             ingredientImg.src = `imgs/${INGREDIENTS[i]}.png`;
             ingredientImg.alt = INGREDIENTS[i];
