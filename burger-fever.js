@@ -10,10 +10,11 @@
 
     const INGREDIENTS = ["top-bun", "pickles", "cheese", "patty", "onion", "tomato", "lettuce", "bottom-bun"];
     const SLICES = ["pickles", "cheese", "patty", "onion", "tomato", "lettuce"];
+    const ASSEMBLY = id("assembly")
 
     function init() {
-        const START_BUTTON = qs("#start-btn");
-        const BACK_BUTTON = qs("#back-btn");
+        const START_BUTTON = id("start-btn");
+        const BACK_BUTTON = id("back-btn");
         START_BUTTON.addEventListener("click", start);
         BACK_BUTTON.addEventListener("click", toggleView);
         populateCards();
@@ -75,8 +76,25 @@
             ingredientCard.appendChild(ingredientName);
             imgContainer.appendChild(ingredientImg);
             ingredientCard.appendChild(imgContainer);
+            ingredientCard.addEventListener("click", () => {
+                addIngredient(INGREDIENTS[i])
+            });
+
             ingredientsList.appendChild(ingredientCard);
+            
         }
+    }
+
+    function addIngredient(ingredient) {
+        let ingredientImg = document.createElement("img");
+        ingredientImg.classList.add("ingredient");
+        ingredientImg.src = `imgs/${ingredient}.png`;
+        ingredientImg.alt = ingredient;
+        ingredientImg.addEventListener("click", () => {
+            ingredientImg.remove();
+        });
+
+        ASSEMBLY.appendChild(ingredientImg);
     }
 
     init();

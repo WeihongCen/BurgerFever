@@ -7,19 +7,32 @@
   padding: 20px;
 }
 
+#order-UI {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 #order {
   background-color: #FFFCF7;
-  width: 240px;
+  width: 200px;
+  height: 100%;
   border-radius: 5px;
-  filter: drop-shadow( 2px 9px 15px #40404040);
-  padding: 10px 20px;
+  filter: drop-shadow( 2px 2px 4px #00000020);
+  padding: 20px;
+  margin-top: 10px;
   overflow: auto;
+  box-sizing: border-box;
 }
 
 #station {
   display: flex;
   height: 40%;
   margin: 20px 0;
+}
+
+#station > div {
+  width: 33%;
 }
 
 #serve {
@@ -29,22 +42,29 @@
 
 #HUD {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   width: auto;
   height: 10vh;
 }
 
 #assembly {
-  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
-  justify-content: flex-end;
   height: 100%;
 }
 
+#assembly img {
+  cursor: pointer;
+}
+
+#assembly img:hover {
+  opacity: 0.5;
+}
+
 .ingredient {
-  max-width: 20%;
+  max-width: 50%;
 }
 
 #ingredient-list {
