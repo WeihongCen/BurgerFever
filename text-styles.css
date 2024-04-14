@@ -4,6 +4,10 @@
   --watermelon: #FF4B44;
 }
 
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 #menu-view h1 {
   font-size: 48pt;
   color: var(--watermelon);
