@@ -15,8 +15,8 @@
     <main>
       <section id="menu-view">
         <h1>Burger Fever</h1>
-        <div id="menu">
-          <div id="settings">
+        <section id="menu">
+          <section>
             <div class="difficulty">
               <h2>Difficulty Level</h2>
               <button value="easy" class="selected">Easy</button>
@@ -30,31 +30,26 @@
                 <option value="300">5 Minutes</option>
               </select>
             </div>
-          </div>
+          </section>
         <button id="start-btn">Start</button>
-        </div>
+        </section>
       </section>
 
 
       <section id="game-view" class="hidden">
-        <div id="game">
-          <div id="HUD">
+          <section id="HUD">
             <button id="back-btn">Menu</button>
             <p id="score">Score: 0</p>
             <p id="timer">Timer: 3:00</p>
-          </div>
-          <div id="station">
-            <div id="order-UI">
+          </section>
+          <section id="station">
+            <section id="order-UI">
               <h2>Order</h2>
-              <div id="order">
-              </div>
-            </div>
-            <div id="assembly">
-            </div>
-          </div>
-          <div id="ingredient-list">
-          </div>
-        </div>
+              <div id="order"></div>
+            </section>
+            <section id="assembly"></section>
+          </section>
+          <section id="ingredient-list"></section>
       </section>
     </main>
   </body>
