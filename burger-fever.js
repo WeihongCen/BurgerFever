@@ -13,12 +13,14 @@
         "tomato", "lettuce", "bottom-bun"];
     const EASY_SLICES = EASY_INGREDIENTS.slice(1, EASY_INGREDIENTS.length-1);
     const HARD_SLICES = HARD_INGREDIENTS.slice(1, HARD_INGREDIENTS.length-1);
-    const ASSEMBLY = id("assembly")
+    const ASSEMBLY = id("assembly");
+    const ORDER = id("order");
     let score = 0;
     let timerID = null;
     let secondsRemaining = null;
     let currBurger = [];
     let currOrder = [];
+    let orderCompleted = false;
 
     function init() {
         const START_BUTTON = id("start-btn");
@@ -29,6 +31,8 @@
     
     function start() {
         score = 0;
+        orderCompleted = false;
+        ASSEMBLY.innerHTML = "";
         updateScore();
         generateOrder();
         populateCards();
@@ -43,6 +47,7 @@
 
     function stop() {
         clearInterval(timerID);
+        orderCompleted = true;
     }
 
     /**
@@ -99,8 +104,8 @@
 
     function generateOrder() {
         currOrder = [];
-        let order = id("order");
-        order.innerHTML = '';
+        ORDER.innerHTML = '';
+        ORDER.classList.remove("correct-order");
 
         let difficulty = qs(".difficulty .selected").value;
         let num_extra = 2;
@@ -124,7 +129,7 @@
                 sliceName = slices[Math.floor(slices.length * Math.random())];
                 ingredient.innerText = sliceName;
             }
-            order.appendChild(ingredient);
+            ORDER.appendChild(ingredient);
             currOrder.push(sliceName);
         }
         currOrder = currOrder.reverse();
@@ -166,16 +171,27 @@
     }
 
     function addIngredient(ingredient) {
-        let ingredientImg = document.createElement("img");
-        ingredientImg.classList.add("ingredient");
-        ingredientImg.src = `imgs/${ingredient}.png`;
-        ingredientImg.alt = ingredient;
-        ingredientImg.addEventListener("click", () => {
-            ingredientImg.remove();
-        });
+        if (!orderCompleted) {
+            let ingredientImg = document.createElement("img");
+            ingredientImg.classList.add("ingredient");
+            ingredientImg.src = `imgs/${ingredient}.png`;
+            ingredientImg.alt = ingredient;
+            ingredientImg.addEventListener("click", () => {
+                if (!orderCompleted) {
+                    ingredientImg.remove();
+                    verifyBurger();
+                }
+            });
+    
+            ASSEMBLY.appendChild(ingredientImg);
+            verifyBurger();
+        }
+    }
 
-        ASSEMBLY.appendChild(ingredientImg);
-        verifyBurger();
+    function newOrder() {
+        generateOrder();
+        orderCompleted = false;
+        ASSEMBLY.innerHTML = '';
     }
 
     function verifyBurger() {
@@ -183,8 +199,13 @@
         console.log(currBurger);
         console.log(currOrder);
         if (JSON.stringify(currBurger) === JSON.stringify(currOrder)) {
-            score++;
-            updateScore();
+            if (!orderCompleted) {
+                score++;
+                updateScore();
+                ORDER.classList.toggle("correct-order");
+                orderCompleted = true;
+                setTimeout(newOrder, 1000);
+            }
         }
     }
 

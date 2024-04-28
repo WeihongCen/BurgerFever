@@ -14,6 +14,10 @@
   width: auto;
 }
 
+#order-UI .correct-order {
+  background-color: #BEFFC5;
+}
+
 #order {
   background-color: #FFFCF7;
   width: 200px;
@@ -67,8 +71,9 @@
 
 #ingredient-list {
   background-color: #EBDFC2;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
   width: auto;
   height: auto;
   gap: 10px;
@@ -80,6 +85,7 @@
 .ingredient-card {
   height: auto;
   min-width: 200px;
+  width: 23%;
   background-color: #FFFFFF;
   border-radius: 20px;
   text-align: center;
