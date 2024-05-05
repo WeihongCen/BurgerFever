@@ -120,14 +120,14 @@
             let ingredient = document.createElement("p");
             let sliceName = "";
             if (i == 0) {
-                ingredient.innerText = "Top bun";
+                ingredient.textContent = "top bun";
                 sliceName = "top-bun";
             } else if (i == ingredientCount - 1) {
-                ingredient.innerText = "Bottom bun";
+                ingredient.textContent = "bottom bun";
                 sliceName = "bottom-bun";
             } else {
                 sliceName = slices[Math.floor(slices.length * Math.random())];
-                ingredient.innerText = sliceName;
+                ingredient.textContent = sliceName;
             }
             ORDER.appendChild(ingredient);
             currOrder.push(sliceName);
