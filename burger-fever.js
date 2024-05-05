@@ -102,6 +102,11 @@
         GAME_VIEW.classList.toggle("hidden");
     }
 
+    /**
+     * Generates a random order based on the difficulty level. The first 
+     * ingredient in the order will always be “Top Bun”, and the last ingredient 
+     * in the order will always be “Bottom Bun”.
+     */
     function generateOrder() {
         currOrder = [];
         ORDER.innerHTML = '';
@@ -135,6 +140,11 @@
         currOrder = currOrder.reverse();
     }
     
+    /**
+     * Populates the ingredient list section with the number of ingredient
+     * cards based on the difficulty level. Calls addIngredient function when
+     * an ingredient card is clicked.
+    */
     function populateCards() {
         let difficulty = qs(".difficulty .selected").value;
         let ingredients = EASY_INGREDIENTS;
@@ -170,6 +180,10 @@
         }
     }
 
+    /**
+     * Adds an ingredient image onto the assembly section when called,
+     * and as long as the order is not fully completed.
+     */
     function addIngredient(ingredient) {
         if (!orderCompleted) {
             let ingredientImg = document.createElement("img");
@@ -188,12 +202,18 @@
         }
     }
 
+    /**
+     * Resets the game and generates a new order.
+     */
     function newOrder() {
         generateOrder();
         orderCompleted = false;
         ASSEMBLY.innerHTML = '';
     }
 
+    /**
+     * Checks if the ingredients in the assembly matches the order.
+     */
     function verifyBurger() {
         getBurger();
         console.log(currBurger);
@@ -209,6 +229,9 @@
         }
     }
 
+    /**
+     * 
+     */
     function getBurger() {
         currBurger = [];
         let scoreTag = id("assembly");
@@ -218,6 +241,9 @@
         }
     }
 
+    /**
+     * Updates the score
+     */
     function updateScore() {
         let scoreTag = id("score");
         scoreTag.textContent = `Score: ${score}`;

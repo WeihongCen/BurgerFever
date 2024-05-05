@@ -2,8 +2,8 @@
  * @author Weihong Cen
  * @date 05/13/2023
  * 
- * This is the JavaScript that manages the game and card states in the SETS! 
- * website.
+ * This is the JavaScript that manages the game and card states in the Burger 
+ * Fever website.
  */
 (function() {
     "use strict";
