@@ -1,6 +1,6 @@
 /**
- * @author Weihong Cen
- * @date 05/13/2023
+ * @author Weihong Cen, Andrew Huang
+ * @date 05/13/2024
  * 
  * This is the JavaScript that emulates a radio button in the main menu.
  */
